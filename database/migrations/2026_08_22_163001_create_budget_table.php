@@ -8,9 +8,11 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('budget', function (Blueprint $table) {
-            $table->tinyInteger('month')->primary();
-            $table->tinyInteger('year')->primary();
+            $table->tinyInteger('month');
+            $table->tinyInteger('year');
             $table->decimal('amount');
+
+            $table->primary(['month', 'year']);
         });
     }
 
